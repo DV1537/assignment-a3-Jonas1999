@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/A3.dir/main.cpp.o CMakeFiles/A3.dir/Line.cpp.o CMakeFiles/A3.dir/Point.cpp.o CMakeFiles/A3.dir/Polygon.cpp.o CMakeFiles/A3.dir/Shape.cpp.o CMakeFiles/A3.dir/Triangle.cpp.o  -o A3 

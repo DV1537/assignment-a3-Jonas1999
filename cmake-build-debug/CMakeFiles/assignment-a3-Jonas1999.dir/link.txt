@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/assignment-a3-Jonas1999.dir/main.cpp.o CMakeFiles/assignment-a3-Jonas1999.dir/Line.cpp.o CMakeFiles/assignment-a3-Jonas1999.dir/Point.cpp.o CMakeFiles/assignment-a3-Jonas1999.dir/Polygon.cpp.o CMakeFiles/assignment-a3-Jonas1999.dir/Shape.cpp.o CMakeFiles/assignment-a3-Jonas1999.dir/Triangle.cpp.o  -o assignment-a3-Jonas1999 

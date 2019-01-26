@@ -1,0 +1,3 @@
+/home/jonas/CLionProjects/assignment-a3-Jonas1999/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/jonas/CLionProjects/assignment-a3-Jonas1999/cmake-build-debug/CMakeFiles/assignment-a3-Jonas1999.dir
+/home/jonas/CLionProjects/assignment-a3-Jonas1999/cmake-build-debug/CMakeFiles/edit_cache.dir
