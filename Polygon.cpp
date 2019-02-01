@@ -18,16 +18,14 @@ std::string Polygon::getType(){
     return "Polygon";
 }
 double Polygon::area(){
-    double area = -1;
-    Point* myPoints = d;
     int n = nums;
     double dotsTotalValue = 0;
     
-    if(n > 2){//inspiration from the shoelace formula
+    if((isConvex()) || n > 2){//inspiration from the shoelace formula
         for (int c = 0; c < n; c++) {
 		    int dotAfter = 0, dotBefore = 0;//the dot value before and after the current dot
 		    if (c == 0) {//the dot is first in the list
-		    	dotAfter = c - 1;
+		    	dotAfter = nums - 1;
 		    	dotBefore = 1;
 		    } 
             else if (c == n - 1) {//the dot is in the end of the list
@@ -48,6 +46,7 @@ double Polygon::area(){
     else{
         return -1;
     }
+
 }
 
 bool Polygon::isConvex(){//inspired from stackoverflow
@@ -151,4 +150,51 @@ Point Polygon::position(){
 
 
     return pos;
+}
+
+void Polygon::operator=(Polygon &basicShape2){
+    nums = basicShape2.nums;
+    d = new Point[basicShape2.nums];
+    for (int e = 0; e < basicShape2.nums; e++)
+        d[e] = basicShape2.d[e];
+}//WIP
+Polygon& operator+(Polygon shape1, Point shape2){
+    Polygon* s = new Polygon();
+    s->nums = shape1.nums + 1;
+
+    Point* temp = new Point[s->nums];
+    for(int i = 0; i < shape1.nums; i++){
+        temp[i] = shape1.d[i];
+    }
+    temp[shape1.nums] = shape2;
+
+    s->d = temp;
+    return *s;
+}
+Polygon& operator+(Polygon shape1, Polygon shape2){
+    Polygon* s = new Polygon();
+    s->nums = shape1.nums + shape2.nums;
+
+    Point* temp = new Point[s->nums];
+    int tempC = 0, tempC2 = 0;
+
+    while(tempC < shape1.nums){//deep copying the first shape to temp
+        temp[tempC] = shape1.d[tempC];
+        tempC++;
+    }
+    while(tempC2 < shape2.nums){//add the second shape were the first shape ended
+        temp[tempC + tempC2] = shape2.d[tempC2];
+        tempC2++;
+    }
+
+    s->d = temp;
+    return *s;
+}
+std::ostream &operator<<(std::ostream &outStream, Polygon &s){
+
+    for (int nums  = 0; nums < s.nums; nums++){
+    outStream << "{" << s.d[nums].getX() << "," << s.d[nums].getY() << "} ";
+    }
+    outStream << '\n';
+    return outStream;
 }

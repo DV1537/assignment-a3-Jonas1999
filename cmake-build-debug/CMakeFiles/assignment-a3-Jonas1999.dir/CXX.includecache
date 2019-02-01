@@ -6,55 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Line.cpp
-cmath
--
-Shape.h
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Shape.h
-Point.h
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Point.h
-Line.h
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Line.h
-
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Line.h
 Shape.h
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Shape.h
 Point.h
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Point.h
 
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Point.cpp
-Point.h
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Point.h
-
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Point.h
-
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Polygon.cpp
-iostream
--
-cmath
--
-Shape.h
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Shape.h
-Point.h
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Point.h
-Polygon.h
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Polygon.h
 
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Polygon.h
 Shape.h
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Shape.h
-
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Shape.cpp
-iostream
--
-string
--
-Shape.h
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Shape.h
 Point.h
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Point.h
-cmath
--
 
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Shape.h
 string
@@ -63,14 +27,6 @@ iostream
 -
 Point.h
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Point.h
-
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Triangle.cpp
-Triangle.h
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Triangle.h
-Point.h
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Point.h
-cmath
--
 
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Triangle.h
 Shape.h
@@ -81,20 +37,20 @@ Point.h
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/main.cpp
 iostream
 -
+fstream
+-
 cmath
 -
 string
 -
-fstream
+sstream
 -
 Shape.h
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Shape.h
-Point.h
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Point.h
-Line.h
-/home/jonas/CLionProjects/assignment-a3-Jonas1999/Line.h
 Triangle.h
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Triangle.h
+Line.h
+/home/jonas/CLionProjects/assignment-a3-Jonas1999/Line.h
 Polygon.h
 /home/jonas/CLionProjects/assignment-a3-Jonas1999/Polygon.h
 

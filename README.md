@@ -32,7 +32,7 @@ is on memory management, class inheritance, encapsulation, and overloading. This
 ### A1: Pointers and memory management
 
 #### Instructions:
-- Write a program that reads numbers from a file into a buffer. The file contains a series of number separated by a space.
+- Write a program that reads numbers from a file into a temp. The file contains a series of number separated by a space.
 - The program outputs all numbers that are above the average, separated by a space.
 - You must store the numbers in a dynamic array and extend the length of the array as needed.
 

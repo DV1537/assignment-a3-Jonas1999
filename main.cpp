@@ -1,83 +1,82 @@
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <string>
-#include <fstream>
+#include <sstream>
+
 #include "Shape.h"
-#include "Point.h"
-#include "Line.h"
 #include "Triangle.h"
+#include "Line.h"
 #include "Polygon.h"
-/**
- * The program reads numbers from a file and prints the sum of them
- * Example: main.exe ./tests/input.in
- * @param  argc [description]
- * @param  argv [description]
- * @return      [description]
- */
+
+using namespace std;
+
 int main(int argc, const char * argv[])
 {
-    
     double a = 0;//used for saving numbers
-    int c = 1;
-    int p = 0;
-    int nums = 0;//used for counting the amount of numbers
-    bool xyCordChecker = true;//used to check which coordinate array the current value of a should be set in
-    double sum = 0;
-    int dotcount = 0;//amount of dots
-    int tempX, tempY = 0;
-    
+    int l = 0;
     std::ifstream myReadFile;
-    
-    myReadFile.open(argv[1]);
-    
-    while (myReadFile >> a)
-    {
-        sum += a;
-        nums++;
-    }
-    myReadFile.close();
 
-    if (nums % 2) {
-        std::cout<<"nums are odd";
-        throw;
-    }
-    
-    dotcount = nums / 2;
-    
-    Point* pntArr = new Point[dotcount];
-    Point temp;
+    Polygon* arrayOfPolygons = new Polygon[2];
 
     myReadFile.open(argv[1]);//re-opens the file to save the numbers in the dynamic array
-    while (myReadFile >> a)
+    std::string line;
+
+    while (std::getline(myReadFile, line))
     {
-        if(c % 2){
-            //Adds to Y
-            temp.setY(a);
-            pntArr[p] = temp;
-            p++;
-        }else{
-            //Adds to X
-            temp = Point(a,0);
+        int values = 0;
+        int dotCount = 0;
+        std::istringstream iss (line);
+        while (iss >> a)
+        {
+            values++;
         }
-        c++;
+        dotCount = values / 2;
+
+        Point* dots = new Point[dotCount];
+
+        double val = 0;
+        int p = 0;
+        int c = 0;
+        std::istringstream reader (line);
+        Point tmp;
+        while(reader >> val){
+            if(c % 2){
+                tmp.setY(val);
+                dots[p] = tmp;
+                p++;
+            }else{
+                tmp = Point(val,0);
+            }
+            c++;
+        }
+        Polygon basic(dots, dotCount);
+        arrayOfPolygons[l] = basic;
+        l++;
     }
 
+
     myReadFile.close();
-    
-    Polygon basicShape(pntArr, dotcount);
-    
-    std::cout << "Area: " << basicShape.area() << std::endl;
-    std::cout << "Shape type: " << basicShape.getType() << std::endl;
-    std::cout << "Area size: " << basicShape.area() << std::endl;
-    std::cout << "Circumference: " << basicShape.circumreference() << std::endl;
-    std::cout << "Center point: " << basicShape.position().getX() << ", " << basicShape.position().getY() << std::endl;
-    if (basicShape.isConvex() == true){
+
+
+    Polygon poly1 = arrayOfPolygons[0];//First polygon
+
+    Polygon poly2 = arrayOfPolygons[1];//Second polygon
+
+    Polygon finalPoly = Polygon();//add them together
+    finalPoly = poly1 + poly2;
+    std::cout << "Area: " << finalPoly.area() << std::endl;
+    std::cout << "Shape type: " << finalPoly.getType() << std::endl;
+    std::cout << "Area size: " << finalPoly.area() << std::endl;
+    std::cout << "Circumference: " << finalPoly.circumreference() << std::endl;
+    std::cout << "Center point: " << finalPoly.position().getX() << ", " << finalPoly.position().getY() << std::endl;
+    if (finalPoly.isConvex() == true){
         std::cout << "The shape is convex" << std::endl;
     }
-    else if (basicShape.isConvex() == false){
+    else if (finalPoly.isConvex() == false){
         std::cout << "The shape isn't convex" << std::endl;
     }
-    
+
 
     return 0;
 }
